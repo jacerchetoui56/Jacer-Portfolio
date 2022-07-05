@@ -470,6 +470,7 @@ header li.active i {
   bottom: 115%;
   left: 50%;
   font-size: 1.25rem;
+  text-align: center;
   font-family: sans-serif;
   transform: translateX(-50%) scale(0);
   transform-origin: center bottom;
