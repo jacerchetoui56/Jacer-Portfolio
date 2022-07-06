@@ -683,6 +683,37 @@ header li.active i {
 .project.hide {
   display: none !important;
 }
+
+.more-react {
+  display: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-family: var(--main-font);
+  background-color: white;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.more-react a {
+  transition: 0.5s;
+  color: black;
+}
+.more-react i {
+  transition: 0.5s;
+  margin: 0 0.5rem 0 0.75rem;
+}
+.more-react:hover {
+  color: white;
+  background-color: var(--main-blue);
+}
+.more-react:hover a {
+  color: white;
+}
+.more-react:hover i {
+  color: white;
+}
+.more-react.show {
+  display: block;
+}
 /* !======================= Education and Experience ========== */
 
 #education .title h2 {

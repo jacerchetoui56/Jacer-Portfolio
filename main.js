@@ -128,43 +128,48 @@ window.addEventListener('load', () => {
 //----------- switching projects -------------
 
 const allBtn = document.querySelector('.all')
-const interactiveBtn = document.querySelector('.interactive')
-const templatesBtn = document.querySelector('.templates')
+const normalBtn = document.querySelector('.normal')
+const reactBtn = document.querySelector('.react')
 
 allBtn.addEventListener('click', () => {
-    interactiveBtn.classList.remove('active')
+    normalBtn.classList.remove('active')
     allBtn.classList.add('active')
-    templatesBtn.classList.remove('active')
+    reactBtn.classList.remove('active')
     document.querySelectorAll('.project').forEach(li => {
         li.classList.remove('hide')
     })
+    document.querySelector('.more-react').classList.remove('show')
+
 })
-interactiveBtn.addEventListener('click', () => {
-    interactiveBtn.classList.add('active')
+normalBtn.addEventListener('click', () => {
+    normalBtn.classList.add('active')
     allBtn.classList.remove('active')
-    templatesBtn.classList.remove('active')
+    reactBtn.classList.remove('active')
 
     document.querySelectorAll('.project').forEach(li => {
-        if (li.classList.contains('template')) {
+        if (li.classList.contains('normal')) {
             li.classList.remove('hide')
         }
         else {
             li.classList.add('hide')
         }
     })
+    document.querySelector('.more-react').classList.remove('show')
+
 })
-templatesBtn.addEventListener('click', () => {
-    interactiveBtn.classList.remove('active')
+reactBtn.addEventListener('click', () => {
+    normalBtn.classList.remove('active')
     allBtn.classList.remove('active')
-    templatesBtn.classList.add('active')
+    reactBtn.classList.add('active')
 
     document.querySelectorAll('.project').forEach(li => {
-        if (li.classList.contains('interactive')) {
+        if (li.classList.contains('react')) {
             li.classList.remove('hide')
         }
         else {
             li.classList.add('hide')
         }
     })
+    document.querySelector('.more-react').classList.add('show')
 })
 
