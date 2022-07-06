@@ -484,6 +484,9 @@ header li.active i {
   transform: translateX(-50%) scale(1);
   opacity: 1;
 }
+[data-name="React"] {
+  padding: 1rem !important;
+}
 
 @media (max-width: 992px) {
   #skills .main {
