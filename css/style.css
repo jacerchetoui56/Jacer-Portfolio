@@ -449,7 +449,7 @@ header li.active i {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-height: 50vh;
+  min-height: 50vh;
   align-self: center;
 }
 
