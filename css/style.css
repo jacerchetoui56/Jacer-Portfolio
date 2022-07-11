@@ -487,6 +487,9 @@ header li.active i {
 [data-name="React"] {
   padding: 1rem !important;
 }
+[data-name="SCSS"] {
+  padding: 1rem 0.8rem !important;
+}
 
 @media (max-width: 992px) {
   #skills .main {
