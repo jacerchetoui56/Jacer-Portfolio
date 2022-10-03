@@ -54,6 +54,51 @@ body {
   );
 }
 
+/* !========== Preloading page ================= */
+
+.preloader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+.preloader .spinner1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border: 3px solid white;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+.preloader .spinner2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45px;
+  height: 45px;
+  border: 3px solid white;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
 /* !== customization for scrollbar == */
 ::-webkit-scrollbar {
   width: 6px;
@@ -919,20 +964,4 @@ header li.active i {
   #contact .text h1 {
     margin-bottom: 1.75rem;
   }
-}
-
-/* !========== Preloading page ================= */
-
-.preloader {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
-}
-.preloader img {
-  width: 150px;
 }
