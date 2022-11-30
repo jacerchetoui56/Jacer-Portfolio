@@ -128,42 +128,28 @@ window.addEventListener('load', () => {
 //----------- switching projects -------------
 
 const allBtn = document.querySelector('.all')
-const normalBtn = document.querySelector('.normal')
-const reactBtn = document.querySelector('.react')
+const normalBtn = document.querySelector('.normal' || '.react')
+const fullBtn = document.querySelector('.full')
 
 allBtn.addEventListener('click', () => {
-    normalBtn.classList.remove('active')
     allBtn.classList.add('active')
-    reactBtn.classList.remove('active')
+    normalBtn.classList.remove('active')
+    fullBtn.classList.remove('active')
+
     document.querySelectorAll('.project').forEach(li => {
         li.classList.remove('hide')
     })
     document.querySelector('.more-react').classList.remove('show')
 
 })
-normalBtn.addEventListener('click', () => {
+function normalAndReact() {
     normalBtn.classList.add('active')
     allBtn.classList.remove('active')
-    reactBtn.classList.remove('active')
+    fullBtn.classList.remove('active')
+
 
     document.querySelectorAll('.project').forEach(li => {
-        if (li.classList.contains('normal')) {
-            li.classList.remove('hide')
-        }
-        else {
-            li.classList.add('hide')
-        }
-    })
-    document.querySelector('.more-react').classList.remove('show')
-
-})
-reactBtn.addEventListener('click', () => {
-    normalBtn.classList.remove('active')
-    allBtn.classList.remove('active')
-    reactBtn.classList.add('active')
-
-    document.querySelectorAll('.project').forEach(li => {
-        if (li.classList.contains('react')) {
+        if (li.classList.contains('normal') || li.classList.contains('react')) {
             li.classList.remove('hide')
         }
         else {
@@ -171,5 +157,23 @@ reactBtn.addEventListener('click', () => {
         }
     })
     document.querySelector('.more-react').classList.add('show')
+
+}
+normalBtn.addEventListener('click', normalAndReact)
+
+fullBtn.addEventListener('click', () => {
+    fullBtn.classList.add('active')
+    allBtn.classList.remove('active')
+    normalBtn.classList.remove('active')
+    document.querySelectorAll('.project').forEach(li => {
+        if (li.classList.contains('normal') || li.classList.contains('react')) {
+            li.classList.add('hide')
+        }
+        else {
+            li.classList.remove('hide')
+        }
+    })
+    document.querySelector('.more-react').classList.remove('show')
+
 })
 
