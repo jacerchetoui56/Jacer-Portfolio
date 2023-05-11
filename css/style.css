@@ -124,44 +124,52 @@ body {
 }
 /* revealing from the bottom */
 .dReveal {
-  transform: translateY(4rem);
+  transform: translateY(2.5rem);
   opacity: 0;
   transition: 0.75s calc(var(--delay) * 0.1s);
+  filter: blur(1px);
 }
 /* revealing from the right */
 .rReveal {
   transform: translateX(-4rem);
   opacity: 0;
   transition: 0.75s calc(var(--delay) * 0.1s);
+  filter: blur(1px);
 }
 /* revealing from the left */
 .lReveal {
   transform: translateX(4rem);
   opacity: 0;
   transition: 0.75s calc(var(--delay) * 0.1s);
+  filter: blur(1px);
 }
 /* revealing from the top */
 .uReveal {
   transform: translateY(-4rem);
   opacity: 0;
   transition: 0.75s calc(var(--delay) * 0.1s);
+  filter: blur(1px);
 }
 /* targetting the revealing , when we add the 'reveal' classname to the element it reveals */
 .toReveal.uReveal.reveal {
   transform: translateY(0);
   opacity: 1;
+  filter: blur(0);
 }
 .toReveal.rReveal.reveal {
   transform: translateX(0);
   opacity: 1;
+  filter: blur(0);
 }
 .toReveal.lReveal.reveal {
   transform: translateX(0);
   opacity: 1;
+  filter: blur(0);
 }
 .toReveal.dReveal.reveal {
   transform: translateY(0);
   opacity: 1;
+  filter: blur(0);
 }
 
 /* !==== scroll top Button === */
@@ -564,7 +572,7 @@ header li.active i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 350px;
+  width: min(90%, 400px);
 }
 
 #projects .buttons > div {
@@ -641,6 +649,7 @@ header li.active i {
   box-shadow: -1px 0 10px -5px #161616b8;
   position: relative;
   transform-origin: center center;
+  background-color: #85858552;
 }
 
 .projects .project:hover img {
