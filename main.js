@@ -10,6 +10,23 @@ const toReveal = document.querySelectorAll("section:not(#home) .toReveal");
 const homeToReveal = document.querySelectorAll("#home .toReveal");
 const navToReveal = document.querySelectorAll("header .toReveal");
 
+//!###########################
+//revealing toggling
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal");
+      //   //making the elements only reveal once
+      //   observer.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove("reveal");
+    }
+  });
+});
+toReveal.forEach((el) => {
+  observer.observe(el);
+});
+//!###########################
 // scroll top
 const scrollTop = document.querySelector(".scrollTop");
 scrollTop.addEventListener("click", () => {
@@ -37,14 +54,7 @@ window.onscroll = () => {
   } else if (window.scrollY >= contactSection.offsetTop - 100) {
     activeNav(4);
   }
-  //revealing toggling
-  toReveal.forEach((li) => {
-    if (window.scrollY >= li.offsetTop - window.innerHeight + 50) {
-      li.classList.add("reveal");
-    } else {
-      li.classList.remove("reveal");
-    }
-  });
+
   // showing the scroll top button
   if (window.scrollY >= skillsSection.offsetTop + 50) {
     scrollTop.classList.add("show");
