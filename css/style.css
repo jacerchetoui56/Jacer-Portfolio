@@ -860,7 +860,8 @@ header li.active i {
   font-weight: 300;
 }
 
-#education .card h4 {
+#education .card h4,
+#education .card a {
   letter-spacing: 2px;
   font-size: 0.9rem;
   color: #dedede;
